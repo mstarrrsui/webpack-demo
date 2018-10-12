@@ -1,4 +1,6 @@
-import './content.css';
+import css from './content.css';
+
+console.log(css);
 
 const top = document.createElement("div");
 top.innerText = "Top of Content";
