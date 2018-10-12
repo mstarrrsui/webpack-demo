@@ -1,13 +1,13 @@
 
-import { items } from './data.js'
-import { capitalize, head, tail } from './utils.js'
+import { numbers as data } from './data.js'
+import { reverse } from './utils.js'
 
 
 
 const div = document.createElement("div");
 div.innerText = "hello there...";
 
-const listitems = items.map( i => {
+const listitems = reverse(data).map( i => {
     let li = document.createElement("li");
     li.innerText = i;
     return li;
