@@ -1,10 +1,12 @@
 
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = env => {
   console.log(env);
+  const devMode = env.mode === 'development';
 
   return (
     {
@@ -13,11 +15,11 @@ module.exports = env => {
         rules: [
           {
             test: /\.css$/,
-            use: ["style-loader","css-loader"]
+            use: [devMode ? "style-loader" : MiniCssExtractPlugin.loader,"css-loader"]
           }
         ]
       },
-      plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin()]
+      plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin(), new MiniCssExtractPlugin()]
     }
   );
 };
