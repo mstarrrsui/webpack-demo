@@ -1,6 +1,7 @@
 
 import { numbers as data, votes } from './data.js'
 import { reverse, voteCounter } from './utils.js'
+import { contentblock } from './content.js'
 
 
 
@@ -30,3 +31,5 @@ const results = document.createElement("div");
 results.innerText = JSON.stringify(voteResults);
 
 document.body.appendChild(results);
+
+document.body.appendChild(contentblock)
